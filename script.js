@@ -1,117 +1,99 @@
-// define districts and thanas as nested arrays
-const districts = {
-  Dhaka: ["Dhaka", "Gazipur", "Manikganj", "Munshiganj", "Narayanganj"],
-  Chittagong: ["Chittagong", "Comilla", "Brahmanbaria", "Feni", "Noakhali"],
-  Rajshahi: ["Rajshahi", "Bogra", "Joypurhat", "Naogaon", "Natore"],
-  Khulna: ["Khulna", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah"],
-  Barishal: ["Barishal", "Barguna", "Bhola", "Jhalokati", "Patuakhali"],
-  Sylhet: ["Sylhet", "Habiganj", "Moulvibazar", "Sunamganj"],
-  Rangpur: ["Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Nilphamari"],
-  Mymensingh: ["Mymensingh", "Jamalpur", "Netrokona", "Sherpur"],
-};
+// Define division, district, and thana data
+const divisions = [  
+  { name: "Barisal", districts: ["Barisal", "Bhola", "Jhalokati"] },
+  { name: "Chittagong", districts: ["Chittagong", "Cox's Bazar", "Khagrachhari"] },
+  { name: "Dhaka", districts: ["Dhaka", "Gazipur", "Narayanganj"] },
+  { name: "Khulna", districts: ["Bagerhat", "Chuadanga", "Jessore"] },
+  { name: "Mymensingh", districts: ["Jamalpur", "Netrokona", "Sherpur"] },
+  { name: "Rajshahi", districts: ["Rajshahi", "Naogaon", "Chapai Nawabganj"] },
+  { name: "Rangpur", districts: ["Lalmonirhat", "Nilphamari", "Rangpur"] },
+  { name: "Sylhet", districts: ["Sylhet", "Moulvibazar", "Habiganj"] },
+];
 
-const thanas = {
-  Dhaka: {
-    Dhaka: ["Uttara", "Mirpur", "Gulshan", "Dhanmondi", "Mohammadpur"],
-    Gazipur: ["Tongi", "Kaliganj", "Kapasia"],
-    Manikganj: ["Manikganj Sadar", "Saturia", "Shibalaya"],
-    Munshiganj: ["Munshiganj Sadar", "Sirajdikhan"],
-    Narayanganj: ["Narayanganj Sadar", "Bandar"],
-  },
-  Chittagong: {
-    Chittagong: ["Chittagong Sadar", "Mirsharai", "Raozan"],
-    Comilla: ["Comilla Sadar", "Brahmanpara", "Chandina"],
-    Brahmanbaria: ["Brahmanbaria Sadar", "Kasba", "Nasirnagar"],
-    Feni: ["Feni Sadar", "Daganbhuiyan", "Parshuram"],
-    Noakhali: ["Noakhali Sadar", "Begumganj", "Hatiya"],
-  },
-  Rajshahi: {
-    Rajshahi: ["Rajshahi Sadar", "Paba", "Durgapur"],
-    Bogra: ["Bogra Sadar", "Adamdighi", "Sonatala"],
-    Joypurhat: ["Joypurhat Sadar", "Akkelpur", "Kalai"],
-    Naogaon: ["Naogaon Sadar", "Atrai", "Manda"],
-    Natore: ["Natore Sadar", "Gurudaspur", "Lalpur"],
-  },
-  Khulna: {
-    Khulna: ["Khulna Sadar", "Batiaghata", "Dumuria"],
-    Bagerhat: ["Bagerhat Sadar", "Chitalmari", "Mollahat"],
-    Chuadanga: ["Chuadanga Sadar", "Alamdanga", "Jibannagar"],
-    Jessore: ["Jessore Sadar", "Abhaynagar", "Bagherpara"],
-    Jhenaidah: ["Jhenaidah Sadar", "Kaliganj", "Shailkupa"],
-  },
-  Barishal: {
-    Barishal: ["Barishal Sadar", "Bakerganj", "Hizla"],
-    Barguna: ["Barguna Sadar", "Amtali", "Bamna"],
-    Bhola: ["Bhola Sadar", "Burhanuddin", "Daulatkhan"],
-    Jhalokati: ["Jhalokati Sadar", "Kathalia", "Nalchity"],
-    Patuakhali: ["Patuakhali Sadar", "Bauphal", "Dashmina"],
-  },
-  Sylhet: {
-    Sylhet: ["Sylhet Sadar", "Beanibazar", "Bishwanath"],
-    Habiganj: ["Habiganj Sadar", "Ajmiriganj", "Bahubal"],
-    Moulvibazar: ["Moulvibazar Sadar", "Barlekha", "Juri"],
-    Sunamganj: ["Sunamganj Sadar", "Bishwamvarpur", "Chhatak"],
-  },
-  Rangpur: {
-    Rangpur: ["Rangpur Sadar", "Badarganj", "Mithapukur"],
-    Panchagarh: ["Panchagarh Sadar", "Boda", "Atwari"],
-    Thakurgaon: ["Thakurgaon Sadar", "Baliadangi", "Haripur"],
-    Dinajpur: ["Dinajpur Sadar", "Birampur", "Bochaganj"],
-    Nilphamari: ["Nilphamari Sadar", "Dimla", "Kishoreganj"],
-  },
-  Mymensingh: {
-    Mymensingh: ["Mymensingh Sadar", "Bhaluka", "Trishal"],
-    Jamalpur: ["Jamalpur Sadar", "Islampur", "Dewanganj"],
-    Sherpur: ["Sherpur Sadar", "Nalitabari", "Jhinaigati"],
-  },
-};
 
-const divisions = Object.keys(thanas);
+const districts = {};
+districts["Dhaka"] = ["Dhaka", "Gazipur", "Narayanganj", "Manikganj", "Munshiganj", "Narsingdi", "Tangail", "Kishoreganj", "Faridpur", "Gopalganj", "Madaripur", "Rajbari", "Shariatpur"];
+districts["Chittagong"] = ["Chittagong", "Cox's Bazar", "Khagrachhari", "Rangamati", "Bandarban", "Chandpur", "Comilla", "Brahmanbaria", "Lakshmipur", "Noakhali", "Feni"];
+districts["Rajshahi"] =  ["Rajshahi", "Naogaon", "Chapai Nawabganj", "Joypurhat", "Pabna", "Bogra", "Sirajganj"];
+districts["Khulna"] =  ["Khulna", "Jessore", "Satkhira", "Meherpur", "Narail", "Chuadanga", "Jhenaidah", "Magura", "Kushtia"];
+districts["Barishal"] =  ["Barishal", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur"];
+districts["Sylhet"] =  ["Sylhet", "Habiganj", "Moulvibazar", "Sunamganj"];
+districts["Rangpur"] =  ["Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon"];
+districts["Mymensingh"] =  ["Mymensingh", "Jamalpur", "Sherpur", "Netrokona"];
 
+
+
+const thanas = {};
+
+thanas["Dhaka"] = [  "Gulshan",  "Banani",  "Mirpur",  "Uttara",  "Mohammadpur",  "Dhanmondi",  "Tejgaon",  "Mohakhali",  "Khilgaon",  "Motijheel",  "Sutrapur",  "Paltan",  "Kotwali",  "Badda",  "Cantonment",  "Turag",  "Demra",  "Shyampur",  "Keraniganj",  "Nawabganj",  "Savar",  "Ramna",  "Jatrabari",  "Hazaribagh",  "Pallabi",  "Rampura",  "Bangsal",  "Sabujbagh",  "Shah Ali",  "Shahbagh",  "Sher-e-Bangla Nagar",  "Tejgaon Industrial Area",  "Uttar Khan",];
+thanas["Gazipur"] = [  "Gazipur Sadar",  "Kaliakair",  "Kapasia",  "Sreepur",  "Kaliganj",  "Tongi",];
+thanas["Narayanganj"] = [  "Narayanganj Sadar",  "Sonargaon",  "Araihazar",  "Bandar",  "Rupganj",];
+thanas["Manikganj"] = ["Manikganj Sadar", "Shibalaya", "Saturia", "Ghior"];
+thanas["Munshiganj"] = ["Munshiganj Sadar", "Gazaria", "Sirajdikhan", "Tongibari"];
+thanas["Narsingdi"] = ["Narsingdi Sadar", "Belabo", "Raipura", "Shibpur"];
+thanas["Tangail"] = [  "Tangail Sadar",  "Gopalpur",  "Kalihati",  "Mirzapur",  "Nagarpur",  "Sakhipur",];
+thanas["Kishoreganj"] = [  "Kishoreganj Sadar",  "Hossainpur",  "Itna",  "Karimganj",  "Katiadi",  "Kuliarchar",  "Mithamain",  "Nikli",  "Ostagram",  "Pakundia",  "Tarail",];
+thanas["Faridpur"] = [  "Faridpur Sadar",  "Alfadanga",  "Bhanga",  "Boalmari",  "Charbhadrasan",  "Madukhali",  "Nagarkanda",  "Sadarpur",  "Saltha",];
+thanas["Gopalganj"] = [  "Gopalganj Sadar",  "Kashiani",  "Kotalipara",  "Muksudpur",  "Tungipara",];
+thanas["Madaripur"] = ["Madaripur Sadar", "Shibchar", "Kalkini"];
+thanas["Rajbari"] = ["Rajbari Sadar", "Baliakandi", "Goalandaghat"];
+thanas["Shariatpur"] = ["Shariatpur Sadar", "Damudya", "Naria"];
+
+thanas["Chittagong"] = [  "Chittagong Sadar",  "Anwara",  "Boalkhali",  "Chandanaish",  "Fatikchhari",  "Hathazari",  "Lohagara",  "Mirsharai",  "Patiya",  "Rangunia",  "Raozan",  "Sandwip",  "Satkania",  "Sitakunda",];
+thanas["Cox's Bazar"] = [  "Cox's Bazar Sadar",  "Chakaria",  "Kutubdia",  "Maheshkhali",  "Ramu",  "Teknaf",  "Ukhia",];
+thanas["Khagrachhari"] = [  "Khagrachhari Sadar",  "Dighinala",  "Lakshmichhari",  "Mahalchhari",  "Manikchhari",  "Matiranga",  "Panchhari",  "Ramgarh",];
+thanas["Rangamati"] = [  "Rangamati Sadar",  "Bagaichhari",  "Barkal",  "Juraichhari",  "Kaptai",  "Langadu",  "Nannerchar",  "Rajasthali",  "Rangunia",];
+thanas["Bandarban"] = [  "Bandarban Sadar",  "Ali Kadam",  "Lama",  "Naikhongchhari",  "Rowangchhari",  "Ruma",  "Thanchi",];
+thanas["Chandpur"] = [  "Chandpur Sadar",  "Faridganj",  "Haimchar",  "Haziganj",  "Kachua",  "Matlab North",  "Matlab South",  "Shahrasti",];
+thanas["Comilla"] = [  "Comilla Sadar",  "Barura",  "Brahmanpara",  "Burichong",  "Chandina",  "Chauddagram",  "Daudkandi",  "Davidhar",  "Homna",  "Laksam",  "Langalkot",  "Meghna",  "Muradnagar",  "Nangalkot",  "Titas",];
+thanas["Brahmanbaria"] = [  "Brahmanbaria Sadar",  "Akhaura",  "Bancharampur",  "Kasba",  "Nabinagar",  "Nasirnagar",  "Sarail",  "Shahbazpur Town",];
+thanas["Lakshmipur"] = [  "Lakshmipur Sadar",  "Raipur",  "Ramganj",  "Ramgati",];
+thanas["Noakhali"] = [  "Noakhali Sadar",  "Begumganj",  "Chatkhil",  "Companyganj",  "Hatiya",  "Kabirhat",  "Senbag",  "Sonaimuri",  "Subarnachar",];
+thanas["Feni"] = [  "Feni Sadar",  "Chhagalnaiya",  "Daganbhuiyan",  "Parshuram",  "Fulgazi",  "Sonagazi",];
+
+
+
+
+// Get references to the select elements
 const divisionSelect = document.getElementById("division");
 const districtSelect = document.getElementById("district");
 const thanaSelect = document.getElementById("thana");
 
-// Populate division options
+// Add options to the division select element
 divisions.forEach((division) => {
   const option = document.createElement("option");
-  option.text = division;
-  option.value = division;
-  divisionSelect.add(option);
+  option.value = division.name;
+  option.textContent = division.name;
+  divisionSelect.appendChild(option);
 });
 
-// Populate district options based on division selection
+// Populate the district select element based on the selected division
 divisionSelect.addEventListener("change", () => {
   const selectedDivision = divisionSelect.value;
-  const districts = Object.keys(thanas[selectedDivision]);
-
-  // Remove previous district and thana options
-  districtSelect.options.length = 1;
-  thanaSelect.options.length = 1;
-
-  // Populate district options
-  districts.forEach((district) => {
-    const option = document.createElement("option");
-    option.text = district;
-    option.value = district;
-    districtSelect.add(option);
-  });
+  districtSelect.innerHTML = "";
+  thanaSelect.innerHTML = "";
+  if (selectedDivision) {
+    const districtOptions = districts[selectedDivision];
+    districtOptions.forEach((district) => {
+      const option = document.createElement("option");
+      option.value = district;
+      option.textContent = district;
+      districtSelect.appendChild(option);
+    });
+  }
 });
 
-// Populate thana options based on district selection
+// Populate the thana select element based on the selected district
 districtSelect.addEventListener("change", () => {
-  const selectedDivision = divisionSelect.value;
   const selectedDistrict = districtSelect.value;
-  const thanas = thanas[selectedDivision][selectedDistrict];
-
-  // Remove previous thana options
-  thanaSelect.options.length = 1;
-
-  // Populate thana options
-  thanas.forEach((thana) => {
-    const option = document.createElement("option");
-    option.text = thana;
-    option.value = thana;
-    thanaSelect.add(option);
-  });
+  thanaSelect.innerHTML = "";
+  if (selectedDistrict) {
+    const thanaOptions = thanas[selectedDistrict];
+    thanaOptions.forEach((thana) => {
+      const option = document.createElement("option");
+      option.value = thana;
+      option.textContent = thana;
+      thanaSelect.appendChild(option);
+    });
+  }
 });
