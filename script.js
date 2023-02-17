@@ -7,9 +7,8 @@ const districts = {
   Barishal: ["Barishal", "Barguna", "Bhola", "Jhalokati", "Patuakhali"],
   Sylhet: ["Sylhet", "Habiganj", "Moulvibazar", "Sunamganj"],
   Rangpur: ["Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Nilphamari"],
-  Mymensingh: ["Mymensingh", "Jamalpur", "Netrokona", "Sherpur"]
+  Mymensingh: ["Mymensingh", "Jamalpur", "Netrokona", "Sherpur"],
 };
-
 
 const thanas = {
   Dhaka: {
@@ -17,58 +16,57 @@ const thanas = {
     Gazipur: ["Tongi", "Kaliganj", "Kapasia"],
     Manikganj: ["Manikganj Sadar", "Saturia", "Shibalaya"],
     Munshiganj: ["Munshiganj Sadar", "Sirajdikhan"],
-    Narayanganj: ["Narayanganj Sadar", "Bandar"]
+    Narayanganj: ["Narayanganj Sadar", "Bandar"],
   },
   Chittagong: {
     Chittagong: ["Chittagong Sadar", "Mirsharai", "Raozan"],
     Comilla: ["Comilla Sadar", "Brahmanpara", "Chandina"],
     Brahmanbaria: ["Brahmanbaria Sadar", "Kasba", "Nasirnagar"],
     Feni: ["Feni Sadar", "Daganbhuiyan", "Parshuram"],
-    Noakhali: ["Noakhali Sadar", "Begumganj", "Hatiya"]
+    Noakhali: ["Noakhali Sadar", "Begumganj", "Hatiya"],
   },
   Rajshahi: {
     Rajshahi: ["Rajshahi Sadar", "Paba", "Durgapur"],
     Bogra: ["Bogra Sadar", "Adamdighi", "Sonatala"],
     Joypurhat: ["Joypurhat Sadar", "Akkelpur", "Kalai"],
     Naogaon: ["Naogaon Sadar", "Atrai", "Manda"],
-    Natore: ["Natore Sadar", "Gurudaspur", "Lalpur"]
+    Natore: ["Natore Sadar", "Gurudaspur", "Lalpur"],
   },
   Khulna: {
     Khulna: ["Khulna Sadar", "Batiaghata", "Dumuria"],
     Bagerhat: ["Bagerhat Sadar", "Chitalmari", "Mollahat"],
     Chuadanga: ["Chuadanga Sadar", "Alamdanga", "Jibannagar"],
     Jessore: ["Jessore Sadar", "Abhaynagar", "Bagherpara"],
-    Jhenaidah: ["Jhenaidah Sadar", "Kaliganj", "Shailkupa"]
+    Jhenaidah: ["Jhenaidah Sadar", "Kaliganj", "Shailkupa"],
   },
   Barishal: {
     Barishal: ["Barishal Sadar", "Bakerganj", "Hizla"],
     Barguna: ["Barguna Sadar", "Amtali", "Bamna"],
     Bhola: ["Bhola Sadar", "Burhanuddin", "Daulatkhan"],
     Jhalokati: ["Jhalokati Sadar", "Kathalia", "Nalchity"],
-    Patuakhali: ["Patuakhali Sadar", "Bauphal", "Dashmina"]
+    Patuakhali: ["Patuakhali Sadar", "Bauphal", "Dashmina"],
   },
   Sylhet: {
     Sylhet: ["Sylhet Sadar", "Beanibazar", "Bishwanath"],
     Habiganj: ["Habiganj Sadar", "Ajmiriganj", "Bahubal"],
     Moulvibazar: ["Moulvibazar Sadar", "Barlekha", "Juri"],
-    Sunamganj: ["Sunamganj Sadar", "Bishwamvarpur", "Chhatak"]
+    Sunamganj: ["Sunamganj Sadar", "Bishwamvarpur", "Chhatak"],
   },
-    Rangpur: {
+  Rangpur: {
     Rangpur: ["Rangpur Sadar", "Badarganj", "Mithapukur"],
     Panchagarh: ["Panchagarh Sadar", "Boda", "Atwari"],
     Thakurgaon: ["Thakurgaon Sadar", "Baliadangi", "Haripur"],
     Dinajpur: ["Dinajpur Sadar", "Birampur", "Bochaganj"],
-    Nilphamari: ["Nilphamari Sadar", "Dimla", "Kishoreganj"]
+    Nilphamari: ["Nilphamari Sadar", "Dimla", "Kishoreganj"],
   },
   Mymensingh: {
-  Mymensingh: ["Mymensingh Sadar", "Bhaluka", "Trishal"],
-  Jamalpur: ["Jamalpur Sadar", "Islampur", "Dewanganj"],
-  Sherpur: ["Sherpur Sadar", "Nalitabari", "Jhinaigati"]
-}
-  
-  
-  
- const divisions = Object.keys(thanas);
+    Mymensingh: ["Mymensingh Sadar", "Bhaluka", "Trishal"],
+    Jamalpur: ["Jamalpur Sadar", "Islampur", "Dewanganj"],
+    Sherpur: ["Sherpur Sadar", "Nalitabari", "Jhinaigati"],
+  },
+};
+
+const divisions = Object.keys(thanas);
 
 const divisionSelect = document.getElementById("division");
 const districtSelect = document.getElementById("district");
@@ -117,5 +115,3 @@ districtSelect.addEventListener("change", () => {
     thanaSelect.add(option);
   });
 });
-
-
